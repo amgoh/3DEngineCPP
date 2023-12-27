@@ -16,7 +16,7 @@ bool GraphicsEngine::init() {
     UINT numFeatureLevels = ARRAYSIZE(featureLevels);
 
     for(UINT driverTypeIndex=0; driverTypeIndex < ARRAYSIZE(driverTypes); driverTypeIndex++){   
-        
+        // D3D12CreateDevice(NULL, featureLevels[0], , NULL);
     }
 
     return true;

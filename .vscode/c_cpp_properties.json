@@ -6,7 +6,8 @@
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/include/**",
                 "${workspaceFolder}/include/App",
-                "${workspaceFolder}/include/Engine/WindowSystem"
+                "${workspaceFolder}/include/Engine/Window",
+                "${workspaceFolder}/include/Engine/Graphics"
             ],
             "defines": [
                 "_DEBUG",
