@@ -1,6 +1,6 @@
 #include "Window.h"
 
-Window* window = NULL;
+Window* window = nullptr;
 
 Window::Window() {}
 
@@ -42,8 +42,8 @@ bool Window::init() {
     wc.hIcon = LoadIcon(NULL, IDI_APPLICATION);
     wc.hIconSm = LoadIcon(NULL, IDI_APPLICATION);
     wc.hInstance = NULL;
-    wc.lpszClassName = L"WindowClass";
-    wc.lpszMenuName = L"";
+    wc.lpszClassName = L"Amogh's Window";
+    wc.lpszMenuName = L"OpenGL Application";
     wc.style = NULL;
     wc.lpfnWndProc = &WndProcW;
 
@@ -61,17 +61,17 @@ bool Window::init() {
 
     // Create window
 
-    RECT rc = { 0, 0, 1024, 768 };
+    // RECT rc = { 0, 0, 1024, 768 };
     // AdjustWindowRect(&rc, WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU, false);
 
     m_hwnd=CreateWindowExW(
         WS_EX_OVERLAPPEDWINDOW,
-        L"Amogh's Window",
-        L"OpenGL Application",
+        L" ",
+        L" ",
         WS_OVERLAPPEDWINDOW,
         CW_USEDEFAULT,
         CW_USEDEFAULT,
-        rc.right - rc.left, rc.bottom - rc.top,
+        1024, 768,
         NULL,NULL,NULL,NULL
     );
 
@@ -94,9 +94,9 @@ bool Window::init() {
 bool Window::broadcast() {
     MSG msg;
 
-    while(PeekMessage(&msg, NULL, 0, 0, PM_REMOVE) > 0) {
+    while(PeekMessageW(&msg, NULL, 0, 0, PM_REMOVE) > 0) {
         TranslateMessage(&msg);
-        DispatchMessage(&msg);
+        DispatchMessageW(&msg);
     }
 
     this->onUpdate();
